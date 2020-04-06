@@ -8,6 +8,14 @@
     <textarea name="describe" id="describe"></textarea>
     Tác giả:
     <input type="text" name="author" id="author">
-    
+    Chọn ngôn ngữ:
+    <select name="lang" id="lang">
+    <?php
+        foreach ($langfile as $lang)
+    {
+        echo '<option value="' . $lang . '">' . $lang . '<option value="';
+    }
+    ?>
+    </select>
     <input type="submit" value="Tạo addon" name="submit">
 </form>
