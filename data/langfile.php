@@ -1,3 +1,3 @@
 <?php
-foreach (glob("/lang/*.lang") as $langfile) {};
+foreach (glob("/lang/*.lang") as $langfile) {}
 ?>
