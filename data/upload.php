@@ -13,7 +13,7 @@ $allowtypes    = array('jpg', 'png', 'jpeg', 'gif', 'icon');
 
 if(isset($_POST["submit"])) {
     //Kiểm tra xem có phải là ảnh
-    $check = getimagesize($_FILES["fileupload"]["tmp_name"]);
+    $check = getimagesize($_FILES["icon"]["tmp_name"]);
     if($check !== false) {
         $allowUpload = true;
     } else {
@@ -24,7 +24,7 @@ if(isset($_POST["submit"])) {
 
 }
 // Kiểm tra kích thước file upload cho vượt quá giới hạn cho phép
-if ($_FILES["fileupload"]["size"] > $maxfilesize)
+if ($_FILES["icon"]["size"] > $maxfilesize)
 {
     $thongbao = $thongbao . "Không được upload ảnh lớn hơn $maxfilesize (bytes).";
     $allowUpload = false;
@@ -40,7 +40,7 @@ if (!in_array($imageFileType,$allowtypes ))
 
 // Kiểm tra xem $uploadOk có bị lỗi thành 0 không
 if ($allowUpload) {
-    if (move_uploaded_file($_FILES["fileupload"]["tmp_name"], $target_file))
+    if (move_uploaded_file($_FILES["icon"]["tmp_name"], $target_file))
     {
     }
     else
